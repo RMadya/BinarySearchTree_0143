@@ -87,9 +87,22 @@ public:
 		}
 		if (ptr != NULL) {
 			cout << ptr->info << " "; // root
-			preorder(ptr->leftchild); // left
-			preorder(ptr->rightchild); // right
+			preorder(ptr->Leftchild); // left
+			preorder(ptr->Rightchild); // right
 		}
 	}
 
-	
+	void postorder(Node* ptr) // function to perform inorder traversal
+	{
+		if (ROOT == NULL) {
+			cout << "Tree is empty" << endl;
+			return;
+		}
+		if (ptr != NULL) {
+			postorder(ptr->Leftchild); // left
+			postorder(ptr->Rightchild); // right
+			cout << ptr->info << " "; // root
+		}
+	}
+};
+
